@@ -1,0 +1,41 @@
+//view-ports
+@function em($pixels, $context: $browser-context) {
+  @return #{$pixels/$context}em
+};
+@function vw($pixels, $context: $screen-width) {
+  @return #{($pixels/$context)* 100}vw
+};
+@function vh($pixels, $context: $screen-height) {
+  @return #{($pixels/$context)* 100}vh
+};
+@function vmax($pixels, $context: $screen-width) {
+  @return #{($pixels/$context)* 100}vmax
+};
+//title-sizes
+$titles-size: (
+  l:  vmax($l-title),
+  m:  vmax($m-title),
+  s:  vmax($s-title),
+  xs: vmax($xs-title)
+);
+.ttl {
+  @each $status, $size in $titles-size {
+    &-#{$status} {
+      font-size: $size;
+    }
+  }
+}
+//text-sizes
+$text-size: (
+  l:  vmax($l-text),
+  m:  vmax($m-text),
+  s:  vmax($s-text),
+  xs: vmax($xs-text)
+);
+.txt {
+  @each $status, $size in $text-size {
+    &-#{$status} {
+      font-size: $size;
+    }
+  }
+}

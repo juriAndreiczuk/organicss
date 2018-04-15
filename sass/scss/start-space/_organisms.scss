@@ -1,0 +1,48 @@
+//headers
+.sticky-header {
+  position: fixed;
+  width: 100%;
+  background: $main-color;
+  z-index: 100;
+  a {
+    text-transform: capitalize;
+    color: $body-color;
+  }
+}
+
+
+//buttons
+.button {
+  text-decoration: none;
+  padding: vh($button-padding-h) vw($button-padding-w);
+  margin: vh($button-margin-h) vw($button-margin-w);
+  cursor: pointer;
+  &:hover {
+    text-decoration: none;
+  }
+}
+.m-button {
+  @extend .button;
+  background-color: $main-color;
+  color: $body-color;
+  &:hover {
+    background: $accent-color;
+  }
+}
+.a-button {
+  @extend .button;
+  background-color: $accent-color;
+  color: $main-color;
+  &:hover {
+    color: $main-color;
+  }
+}
+.b-button {
+  @extend .button;
+  background-color: transparent;
+  color: $main-color;
+  border: vmax($button-border);
+  &:hover {
+    background: $accent-color;
+  }
+}
