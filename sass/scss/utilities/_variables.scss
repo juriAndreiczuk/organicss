@@ -32,6 +32,21 @@ $m-text:  18;
 $s-text:  16;
 $xs-text: 14;
 
+//title-sizes
+$titles-size: (
+  l:  $l-title,
+  m:  $m-title,
+  s:  $s-title,
+  xs: $xs-title
+);
+//text-sizes
+$text-size: (
+  l:  $l-text,
+  m:  $m-text,
+  s:  $s-text,
+  xs: $xs-text
+);
+
 //indents
 $section-margin-h:  0;
 $section-margin-w:  0;

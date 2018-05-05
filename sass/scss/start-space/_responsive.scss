@@ -1,0 +1,55 @@
+@media (max-width: 1400px) {
+  .ttl {
+    @include emFonts($titles-size, 0);
+  }
+  .txt {
+    @include emFonts($text-size, 0)
+  }
+}
+
+@media (max-width: 1200px) {
+  .ttl {
+    @include emFonts($titles-size, 1);
+  }
+  .txt {
+    @include emFonts($text-size, 1)
+  }
+  .wrap {
+    width:80%;
+  }
+}
+
+@media (max-width: 992px) {
+  .ttl {
+    @include emFonts($titles-size, 2);
+  }
+  .txt {
+    @include emFonts($text-size, 2)
+  }
+  .wrap {
+    width: 90%;
+  }
+  .g-4 {
+    width: percentage(1/2);
+  }
+}
+
+@media (max-width: 767px) {
+  .ttl {
+    @include emFonts($titles-size, 3);
+  }
+  .txt {
+    @include emFonts($text-size, 3)
+  }
+  .wrap {
+    width: 95%;
+  }
+  .g-3 {
+    width: 100%;
+  }
+}
+@media (max-width: 567px) {
+  .g-2 {
+    width: 100%;
+  }
+}

@@ -25,7 +25,10 @@
 	@extend .flex;
 	justify-content:flex-end;
 }
-//-----------------------------
+//----------------------------
+.ai-center {
+	align-items: center;
+}
 .ai-start {
 	align-items: flex-start;
 }
@@ -43,7 +46,6 @@
 	flex-direction: column-reverse;
 }
 //-------------------------------
-
 //===============================
 //indent atoms
 .section {
@@ -71,18 +73,31 @@
 .g-5 {
 	width: percentage(1/5);
 }
+.g-6 {
+	width: percentage(1/6);
+}
+//================================
+//fonts
+.ttl {
+  @include viewPortFonts($titles-size);
+}
+.txt {
+  @include viewPortFonts($text-size)
+}
+
 //================================
 //colors
 .m-fill {
 	background-color: $main-color;
 }
-
 .a-fill {
 	background-color: $accent-color;
 }
-
 .b-fill {
 	background-color: $body-color;
+}
+.ad-fill {
+	background-color: $additional-color;
 }
 //------------------------------
 .m-color {
@@ -111,4 +126,52 @@
 }
 .st-color {
 	color: $subtext-color;
+}
+//---------------------------------
+.absolute {
+	position: absolute;
+}
+.relative {
+	position: relative;
+}
+.fixed {
+	position: fixed;
+}
+.absolute-start {
+	@extend .absolute;
+	top: 0;
+	left: 0;
+}
+.absolute-end {
+	@extend .absolute;
+	bottom: 0;
+	right: 0;
+}
+//----------------------------------
+.i-block {
+	display: inline-block;
+}
+.block {
+	display: block;
+}
+.inline {
+	display: inline;
+}
+//----------------------------------
+.h-100 {
+	height: 100%;
+}
+.w-100 {
+	width: 100%;
+}
+.full {
+	height: 100%;
+	width: 100%;
+}
+//-----------------------------------
+.uppercase {
+	text-transform: uppercase;
+}
+.capitalize {
+	text-transform: capitalize;
 }
