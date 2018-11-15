@@ -1,0 +1,34 @@
+//headers
+.sticky-header {
+  @extend .fixed;
+  @extend .g-1;
+  @extend .m-fill;
+  @extend .z-100;
+  a {
+    @extend .capitalize;
+    @extend .b-color;
+  }
+}
+
+//buttons
+.button {
+  padding: vh($button-padding-h) vw($button-padding-w);
+  margin: vh($button-margin-h) vw($button-margin-w);
+  @extend .pointer;
+}
+.m-button {
+  @extend .button;
+  @extend .m-fill;
+  @extend .b-color;
+  &:hover {
+    @extend .a-fill;
+  }
+}
+.a-button {
+  @extend .button;
+  @extend .a-fill;
+  @extend .b-color;
+  &:hover {
+    @extend .m-fill;
+  }
+}
