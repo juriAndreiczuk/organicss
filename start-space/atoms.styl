@@ -1,0 +1,410 @@
+//display-atoms
+.i-block 
+	display inline-block
+
+.block 
+	display block
+
+.inline 
+	display inline
+
+.flex 
+	display flex
+	flex-flow row wrap
+
+.none 
+	display none
+	
+.m-none
+	@media (max-width 992px)
+		display none
+
+.d-none
+	@media (min-width 992px)
+		display none
+
+.t-none 
+	@media (max-width 1200px)
+		display none
+
+//flex-atoms
+.flex-center 
+	@extend .flex
+	justify-content center
+
+.flex-between 
+	@extend .flex
+	justify-content space-between
+
+.flex-around 
+	@extend .flex
+	justify-content space-around
+
+
+.flex-start 
+	@extend .flex
+	justify-content flex-start
+
+.flex-end 
+	@extend .flex
+	justify-content flex-end
+
+//----------------------------vertical-aligment 
+.ai-center 
+	align-items center
+
+.ai-stretch 
+	align-items stretch
+
+.ai-start 
+	align-items flex-start
+
+.ai-end 
+	align-items flex-end
+
+//-----------------------------direction
+.fd-reverse 
+	flex-direction row-reverse
+
+.fd-column 
+	flex-direction column
+
+.fd-column-reverse 
+	flex-direction column-reverse
+
+
+//containers
+.wrap-s 
+	width 100%
+	margin 0 auto
+	@media(min-width 992px)
+		width work-size
+	
+.wrap-m
+	width 100%
+	margin 0 auto
+	@media(min-width 992px)
+		width 91.4%	
+
+
+//fonts 
+.center 
+	text-align center
+.text-left 
+	@media (min-width 767px)
+		text-align left
+
+.text-right
+	@media (min-width 992px)
+		text-align right
+
+.m-font 
+	font-family main-font
+
+.a-font 
+	font-family additional-font
+
+.icon-font
+	font-family "Font Awesome 5 Free"
+	font-weight 900 
+
+
+//background-colors
+.bg-border
+	background-color border-color 
+	
+.bg-main
+	background-color main-color
+
+.bg-main--50
+	background-color transparentify(main-color, main-color, .7)
+.bg-accent
+	background-color accent-color
+
+.bg-text
+	background-color text-color
+.bg-text--50 
+	background-color transparentify(text-color, .7)
+
+.bg-title
+	background-color title-color
+
+.bg-body 
+	background-color body-color
+
+.bg-additional
+	background-color additional-color
+
+.bg-subtext
+	background-color subtext-color
+
+.bg-footer
+	background-color footer-color	
+
+.bg-transparent
+	background-color transparent
+
+.background-fixed
+	@media(min-width 992px)
+		background-attachment fixed
+	
+.background-center	
+	background-position center
+
+.background-bottom
+	background-position bottom
+
+.full-bg
+	background-size cover
+	
+.bg-100
+	background-size 100% auto
+
+.accent-hover:hover
+	background-color accent-color
+
+
+
+	
+//fonts
+//-----------------------------colors
+.c-main 
+	color main-color
+	
+.c-body
+	color body-color
+
+.c-text
+	color text-color
+	
+.c-title 
+	color title-color
+
+.c-additional
+	color additional-color
+	
+.c-accent 
+	color accent-color
+
+.c-subtext
+	color subtext-color
+
+.c-subtitle
+	color subtitle-color
+
+.c-footer 
+	color footer-color
+
+.accent-color:hover 
+	color accent-color
+
+//-----------------------------styles
+.uppercase 
+	text-transform uppercase
+
+.capitalize 
+	text-transform capitalize
+
+.lowercase 
+	text-transform lowercase
+
+.italic 
+	font-style italic
+
+.normal-font 
+	font-style normal
+
+
+
+//position atoms
+.absolute 
+	position absolute
+
+.relative 
+	position relative
+
+.fixed 
+	position fixed
+
+.sticky 
+	@media(min-width 992px)
+		position sticky
+.top 
+	top 0
+.left
+	left 0
+.right
+	right 0
+.bottom 
+	bottom 0
+	
+.behind-top
+	bottom 100%
+.behind-left 
+	right 100%
+.behind-right 
+	left 100%	
+.behind-bottom
+	top 100%
+
+
+//resets atoms
+.padding-0
+	padding 0
+.margin-0
+	margin 0
+.top-reset
+	top auto !important
+.bottom-reset
+	bottom auto !important
+.right-reset
+	right auto !important
+.left-reset
+	left auto !important
+.width-reset 
+	width auto !important
+.height-reset 
+	height auto !important
+.border-reset
+	border none
+.collapse 
+	transform scale(0)
+	opacity 0
+
+//greed atoms
+.g-1 
+	width percentage(1/1)
+.g-2
+	flex-basis 48%
+	&-s
+		@extend .g-1
+		@media(min-width 767px)
+			flex-basis 48%
+	&-m
+		@extend .g-1
+		@media(min-width 992px)
+			flex-basis 48%
+.g-3 
+	flex-basis 31%
+	&-s 
+		@extend .g-1
+		@media(min-width 767px)
+			flex-basis 31%
+	&-m
+		@extend .g-1
+		@media(min-width 992px)
+			flex-basis 31%
+
+.g-4 
+	flex-basis 23%
+	&-xs
+		@extend .g-1
+		@media(min-width 767px)
+			flex-basis 23%
+	&-s
+		@extend .g-1
+		@media(min-width 576px)
+			flex-basis 43%
+		@media(min-width 767px)
+			flex-basis 23%
+	&-m
+		@extend .g-1
+		@media(min-width 992px)
+			flex-basis 23%
+		
+.g-5 
+	flex-basis 22%
+	&-s
+		@extend .g-1
+		@media(min-width 767px)
+			flex-basis 22%
+	&-m
+		@extend .g-1
+		@media(min-width 992px)
+			flex-basis 22%
+		
+.g-6 
+	flex-basis 15%
+	&-s 
+		@extend .g-1
+		@media(min-width 767px)
+			flex-basis 15%
+	&-m
+		@extend .g-1
+		@media(min-width 992px)
+			flex-basis 15%
+
+
+//z-index 
+for i in (-1..10)
+	.z-{i}
+		z-index  i
+
+//opacity
+for i in (0..10)
+	.visible-{i}
+		opacity (i / 10)
+//font-weight
+for i in 300 400 500 700 900
+	.fw-{i}
+		font-weight i	
+//line-height
+for i in (1..6)
+	.lh-{i}
+		line-height (1 + (i / 10))em
+
+//border-radius
+for i in  5 10 20 30 35 300
+	.border-radius-{i}
+		border-radius (i)px
+.circle 
+	border-radius  50%
+
+
+//size atoms
+.h-100 
+	height 100%
+.mh-100 
+	max-height:  100%
+.w-100 
+	max-width 100%
+.w-50 
+	width 50%
+.w-50-m
+	@media(min-width 992px)
+		width 50%
+.vh-100 
+	min-height 100vh
+
+
+//cursor atoms
+.pointer 
+	cursor pointer
+.arrow 
+	cursor default
+
+//transition atoms
+.fluency 
+	transition all .4s ease		
+.fluency--fast 
+	transition all .2s ease
+.fluency--slow
+	transition all .8s ease
+
+//overflow atoms
+.o-hidden
+	overflow hidden
+.o-hidden--x 
+	overflow-x hidden
+.o-hidden--y
+	overflow-y hidden
+.o-auto
+	overflow auto
+
+//page elements indent
+.title 
+	padding vw(17) 0 vw(15)
+.section
+	padding vw(section-top) 0 vw(section-bottom)
+.button 
+	padding vw(button-v) vw(button-h)

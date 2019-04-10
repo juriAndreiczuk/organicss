@@ -1,0 +1,32 @@
+
+em(pixels)
+ return (pixels/browser-context)em
+
+vw(pixels)
+ return (pixels/screen-width * 100)vw
+
+vh(pixels)
+  return (pixels/screen-height * 100)vh
+
+vmax(pixels)
+ return (pixels/screen-width * 100)vmax
+
+
+fzDefine(text-type, list, units, n)
+    for name, size in list
+      .{text-type}-{name}
+        font-size: units(size - n)
+
+
+
+fzDefine(ttl, titles-size, em, 9)
+fzDefine(txt, text-size, em, 1)	
+
+@media(min-width 1200px) {
+  fzDefine(ttl, titles-size, vmax, 0)
+}
+@media(min-width 1600px) {
+	fzDefine(txt, text-size, vmax, 0)	
+}
+
+
