@@ -1,4 +1,3 @@
-
 em(pixels)
  return (pixels/browser-context)em
 
@@ -19,14 +18,18 @@ fzDefine(text-type, list, units, n)
 
 
 
-fzDefine(ttl, titles-size, em, 9)
-fzDefine(txt, text-size, em, 1)	
 
-@media(min-width 1200px) {
-  fzDefine(ttl, titles-size, vmax, 0)
-}
-@media(min-width 1600px) {
-	fzDefine(txt, text-size, vmax, 0)	
-}
-
-
+adaptability(a,b,c) 
+	if a != ''
+		@extend {a} 
+	{b}(c)
+	&--m
+		if a != ''
+			@extend {a} 
+		@media(max-width 992px)
+			{b}(c)
+	&--d 
+		if a != ''
+			@extend {a}
+		@media(min-width 992px)
+			{b}(c)

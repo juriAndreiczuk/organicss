@@ -1,216 +1,148 @@
+//text-atoms
+fzDefine(ttl, titles-size, em, 9)
+fzDefine(txt, text-size, em, 1)	
+
+@media(min-width 1200px) {
+  fzDefine(ttl, titles-size, vmax, 0)
+}
+@media(min-width 1600px) {
+	fzDefine(txt, text-size, vmax, 0)	
+}
+
+
 //display-atoms
+.none 
+	adaptability(a: '', b: 'display', c: none)
 .i-block 
-	display inline-block
-
+	adaptability(a: '', b: 'display', c: inline-block)
 .block 
-	display block
-
+	adaptability(a: '', b: 'display', c: block)
 .inline 
-	display inline
-
+	adaptability(a: '', b: 'display', c: inline)
+//flex-atoms
 .flex 
 	display flex
 	flex-flow row wrap
-
-.none 
-	display none
-	
-.m-none
-	@media (max-width 992px)
-		display none
-
-.d-none
-	@media (min-width 992px)
-		display none
-
-.t-none 
-	@media (max-width 1200px)
-		display none
-
-//flex-atoms
 .flex-center 
-	@extend .flex
-	justify-content center
-
+	adaptability(a: '.flex', b: 'justify-content', c: center)
 .flex-between 
-	@extend .flex
-	justify-content space-between
-
+	adaptability(a: '.flex', b: 'justify-content', c: space-between)
 .flex-around 
-	@extend .flex
-	justify-content space-around
-
-
-.flex-start 
-	@extend .flex
-	justify-content flex-start
-
+	adaptability(a: '.flex', b: 'justify-content', c: space-around)
+.flex-start
+	adaptability(a: '.flex', b: 'justify-content', c: flex-start)
 .flex-end 
-	@extend .flex
-	justify-content flex-end
-
+	adaptability(a: '.flex', b: 'justify-content', c: flex-end)
 //----------------------------vertical-aligment 
 .ai-center 
-	align-items center
-
+	adaptability(a: '', b: 'align-items', c: center)
 .ai-stretch 
-	align-items stretch
-
+	adaptability(a: '', b: 'align-items', c: stretch)
 .ai-start 
-	align-items flex-start
-
+	adaptability(a: '', b: 'align-items', c: flex-start)
 .ai-end 
-	align-items flex-end
+	adaptability(a: '', b: 'align-items', c: flex-end)
 
 //-----------------------------direction
 .fd-reverse 
-	flex-direction row-reverse
-
+	adaptability(a: '', b: 'flex-direction', c: row-reverse)
 .fd-column 
-	flex-direction column
-
+	adaptability(a: '', b: 'flex-direction', c: column)
 .fd-column-reverse 
-	flex-direction column-reverse
+	adaptability(a: '', b: 'flex-direction', c: column-reverse)
 
-
-//containers
-.wrap-s 
+//container
+.wrap 
 	width 100%
 	margin 0 auto
 	@media(min-width 992px)
 		width work-size
 	
-.wrap-m
-	width 100%
-	margin 0 auto
-	@media(min-width 992px)
-		width 91.4%	
 
 
 //fonts 
 .center 
-	text-align center
+	adaptability(a: '', b: 'text-align', c: center)
 .text-left 
-	@media (min-width 767px)
-		text-align left
-
+	adaptability(a: '', b: 'text-align', c: left)
 .text-right
-	@media (min-width 992px)
-		text-align right
-
-.m-font 
+	adaptability(a: '', b: 'text-align', c: right)
+.ff-main 
 	font-family main-font
-
-.a-font 
+.ff-extra 
 	font-family additional-font
-
-.icon-font
-	font-family "Font Awesome 5 Free"
-	font-weight 900 
 
 
 //background-colors
 .bg-border
 	background-color border-color 
-	
 .bg-main
 	background-color main-color
-
 .bg-main--50
-	background-color transparentify(main-color, main-color, .7)
+	background-color transparentify(main-color, main-color, .5)
 .bg-accent
 	background-color accent-color
-
 .bg-text
 	background-color text-color
-.bg-text--50 
-	background-color transparentify(text-color, .7)
-
 .bg-title
 	background-color title-color
-
 .bg-body 
 	background-color body-color
-
 .bg-additional
 	background-color additional-color
-
 .bg-subtext
 	background-color subtext-color
-
 .bg-footer
 	background-color footer-color	
-
 .bg-transparent
 	background-color transparent
-
+.accent-hover:hover
+	background-color accent-color
 .background-fixed
 	@media(min-width 992px)
 		background-attachment fixed
-	
 .background-center	
 	background-position center
-
 .background-bottom
 	background-position bottom
-
 .full-bg
 	background-size cover
-	
 .bg-100
 	background-size 100% auto
 
-.accent-hover:hover
-	background-color accent-color
 
-
-
-	
 //fonts
 //-----------------------------colors
 .c-main 
 	color main-color
-	
 .c-body
 	color body-color
-
 .c-text
 	color text-color
-	
 .c-title 
 	color title-color
-
 .c-additional
 	color additional-color
-	
 .c-accent 
 	color accent-color
-
 .c-subtext
 	color subtext-color
-
 .c-subtitle
 	color subtitle-color
-
 .c-footer 
 	color footer-color
-
 .accent-color:hover 
 	color accent-color
 
 //-----------------------------styles
 .uppercase 
 	text-transform uppercase
-
 .capitalize 
 	text-transform capitalize
-
 .lowercase 
 	text-transform lowercase
-
 .italic 
 	font-style italic
-
 .normal-font 
 	font-style normal
 
@@ -218,25 +150,22 @@
 
 //position atoms
 .absolute 
-	position absolute
-
+	adaptability(a: '', b: 'position', c: absolute)
 .relative 
-	position relative
-
+	adaptability(a: '', b: 'position', c: relative)
 .fixed 
-	position fixed
-
+	adaptability(a: '', b: 'position', c: fixed)
 .sticky 
-	@media(min-width 992px)
-		position sticky
+	adaptability(a: '', b: 'position', c: sticky)
+	
 .top 
-	top 0
+	adaptability(a: '', b: 'top', c: 0)
 .left
-	left 0
+	adaptability(a: '', b: 'left', c: 0)
 .right
-	right 0
+	adaptability(a: '', b: 'right', c: 0)
 .bottom 
-	bottom 0
+	adaptability(a: '', b: 'bottom', c: 0)
 	
 .behind-top
 	bottom 100%
@@ -246,6 +175,31 @@
 	left 100%	
 .behind-bottom
 	top 100%
+
+//z-index 
+for i in (-1..10)
+	.z-{i}
+		z-index  i
+
+//opacity
+for i in (0..10)
+	.visible-{i}
+		opacity (i / 10)
+//font-weight
+for i in 300 400 500 700 900
+	.fw-{i}
+		font-weight i	
+//line-height
+for i in (1..6)
+	.lh-{i}
+		line-height (1 + (i / 10))em
+
+//border-radius
+for i in  5 10 20 30 35 300
+	.border-radius-{i}
+		border-radius (i)px
+.circle 
+	border-radius  50%
 
 
 //resets atoms
@@ -275,90 +229,63 @@
 .g-1 
 	width percentage(1/1)
 .g-2
-	flex-basis 48%
+	flex-basis 50%
 	&-s
 		@extend .g-1
 		@media(min-width 767px)
-			flex-basis 48%
+			flex-basis 50%
 	&-m
 		@extend .g-1
 		@media(min-width 992px)
-			flex-basis 48%
+			flex-basis 50%
 .g-3 
-	flex-basis 31%
+	flex-basis 33%
 	&-s 
 		@extend .g-1
 		@media(min-width 767px)
-			flex-basis 31%
+			flex-basis 33%
 	&-m
 		@extend .g-1
 		@media(min-width 992px)
-			flex-basis 31%
+			flex-basis 33%
 
 .g-4 
-	flex-basis 23%
-	&-xs
-		@extend .g-1
-		@media(min-width 767px)
-			flex-basis 23%
+	flex-basis 25%
 	&-s
 		@extend .g-1
 		@media(min-width 576px)
-			flex-basis 43%
+			flex-basis 50%
 		@media(min-width 767px)
-			flex-basis 23%
+			flex-basis 25%
 	&-m
 		@extend .g-1
 		@media(min-width 992px)
-			flex-basis 23%
+			flex-basis 25%
 		
 .g-5 
-	flex-basis 22%
+	flex-basis 20%
 	&-s
 		@extend .g-1
 		@media(min-width 767px)
-			flex-basis 22%
+			flex-basis 20%
 	&-m
 		@extend .g-1
 		@media(min-width 992px)
-			flex-basis 22%
+			flex-basis 20%
 		
 .g-6 
-	flex-basis 15%
+	flex-basis 16.5%
 	&-s 
 		@extend .g-1
 		@media(min-width 767px)
-			flex-basis 15%
+			flex-basis 16.5%
 	&-m
 		@extend .g-1
 		@media(min-width 992px)
-			flex-basis 15%
+			flex-basis 16.5%
 
 
-//z-index 
-for i in (-1..10)
-	.z-{i}
-		z-index  i
 
-//opacity
-for i in (0..10)
-	.visible-{i}
-		opacity (i / 10)
-//font-weight
-for i in 300 400 500 700 900
-	.fw-{i}
-		font-weight i	
-//line-height
-for i in (1..6)
-	.lh-{i}
-		line-height (1 + (i / 10))em
-
-//border-radius
-for i in  5 10 20 30 35 300
-	.border-radius-{i}
-		border-radius (i)px
-.circle 
-	border-radius  50%
 
 
 //size atoms
@@ -403,7 +330,7 @@ for i in  5 10 20 30 35 300
 
 //page elements indent
 .title 
-	padding vw(17) 0 vw(15)
+	padding vw(title-top) 0 vw(title-bottom)
 .section
 	padding vw(section-top) 0 vw(section-bottom)
 .button 
