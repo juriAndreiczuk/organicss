@@ -1,14 +1,36 @@
 //text-atoms
-fzDefine(ttl, titles-size, em, 9)
-fzDefine(txt, text-size, em, 1)	
+fzDefine(text-type: ttl, list: titles-size, units: em, n: 9)
+fzDefine(text-type: txt, list: text-size, units: em, n: 1)	
 
 @media(min-width 1200px) {
-  fzDefine(ttl, titles-size, vmax, 0)
+  fzDefine(text-type: ttl, list: titles-size, units: vmax, n: 0)
 }
 @media(min-width 1600px) {
-	fzDefine(txt, text-size, vmax, 0)	
+	fzDefine(text-type: txt, list: text-size, units: vmax, n: 0)	
 }
 
+//organicss grid
+.cell
+	flex-grow 1
+for i in (1..12)
+	.fb-{i}
+		flex-basis percentage(i/12)
+		&--d 
+			@media(min-width 992px)
+				flex-basis percentage(i/12)
+		&--t 
+			@media(max-width 992px)
+				flex-basis percentage(i/12)
+		&--m		
+			@media(max-width 767px)
+				flex-basis percentage(i/12)
+
+//container
+.wrap 
+	width 100%
+	margin 0 auto
+	@media(min-width 992px)
+		width work-size
 
 //display-atoms
 .none 
@@ -51,13 +73,12 @@ fzDefine(txt, text-size, em, 1)
 .fd-column-reverse 
 	adaptability(a: '', b: 'flex-direction', c: column-reverse)
 
-//container
-.wrap 
-	width 100%
-	margin 0 auto
-	@media(min-width 992px)
-		width work-size
-	
+
+//transition atoms
+for i in (2 4 6 8 10)
+	.transition-{i}
+		transition all (i / 10)s ease	
+
 
 
 //fonts 
@@ -67,37 +88,37 @@ fzDefine(txt, text-size, em, 1)
 	adaptability(a: '', b: 'text-align', c: left)
 .text-right
 	adaptability(a: '', b: 'text-align', c: right)
-.ff-main 
+.f-main 
 	font-family main-font
-.ff-extra 
+.f-extra 
 	font-family additional-font
 
+//-----------------------------colors
+colorMaker(class-name: c, prop: 'color', list: colors)
+.accent-color:hover 
+	color accent-color
 
-//background-colors
-.bg-border
-	background-color border-color 
-.bg-main
-	background-color main-color
-.bg-main--50
-	background-color transparentify(main-color, main-color, .5)
-.bg-accent
-	background-color accent-color
-.bg-text
-	background-color text-color
-.bg-title
-	background-color title-color
-.bg-body 
-	background-color body-color
-.bg-additional
-	background-color additional-color
-.bg-subtext
-	background-color subtext-color
-.bg-footer
-	background-color footer-color	
+//--------------------------transform
+.uppercase 
+	text-transform uppercase
+.capitalize 
+	text-transform capitalize
+.lowercase 
+	text-transform lowercase
+.italic 
+	font-style italic
+.normal-font 
+	font-style normal
+
+
+
+// //background-colors
+colorMaker(class-name: bg, prop: 'background-color',list: colors)
 .bg-transparent
 	background-color transparent
 .accent-hover:hover
 	background-color accent-color
+	
 .background-fixed
 	@media(min-width 992px)
 		background-attachment fixed
@@ -111,40 +132,7 @@ fzDefine(txt, text-size, em, 1)
 	background-size 100% auto
 
 
-//fonts
-//-----------------------------colors
-.c-main 
-	color main-color
-.c-body
-	color body-color
-.c-text
-	color text-color
-.c-title 
-	color title-color
-.c-additional
-	color additional-color
-.c-accent 
-	color accent-color
-.c-subtext
-	color subtext-color
-.c-subtitle
-	color subtitle-color
-.c-footer 
-	color footer-color
-.accent-color:hover 
-	color accent-color
 
-//-----------------------------styles
-.uppercase 
-	text-transform uppercase
-.capitalize 
-	text-transform capitalize
-.lowercase 
-	text-transform lowercase
-.italic 
-	font-style italic
-.normal-font 
-	font-style normal
 
 
 
@@ -168,13 +156,13 @@ fzDefine(txt, text-size, em, 1)
 	adaptability(a: '', b: 'bottom', c: 0)
 	
 .behind-top
-	bottom 100%
+	adaptability(a: '', b: 'bottom', c: 100%)
 .behind-left 
-	right 100%
+	adaptability(a: '', b: 'right', c: 100%)
 .behind-right 
-	left 100%	
+	adaptability(a: '', b: 'left', c: 100%)
 .behind-bottom
-	top 100%
+	adaptability(a: '', b: 'top', c: 100%)
 
 //z-index 
 for i in (-1..10)
@@ -195,7 +183,7 @@ for i in (1..6)
 		line-height (1 + (i / 10))em
 
 //border-radius
-for i in  5 10 20 30 35 300
+for i in  5 10 15 20 25 30 100
 	.border-radius-{i}
 		border-radius (i)px
 .circle 
@@ -225,84 +213,18 @@ for i in  5 10 20 30 35 300
 	transform scale(0)
 	opacity 0
 
-//greed atoms
-.g-1 
-	width percentage(1/1)
-.g-2
-	flex-basis 50%
-	&-s
-		@extend .g-1
-		@media(min-width 767px)
-			flex-basis 50%
-	&-m
-		@extend .g-1
-		@media(min-width 992px)
-			flex-basis 50%
-.g-3 
-	flex-basis 33%
-	&-s 
-		@extend .g-1
-		@media(min-width 767px)
-			flex-basis 33%
-	&-m
-		@extend .g-1
-		@media(min-width 992px)
-			flex-basis 33%
-
-.g-4 
-	flex-basis 25%
-	&-s
-		@extend .g-1
-		@media(min-width 576px)
-			flex-basis 50%
-		@media(min-width 767px)
-			flex-basis 25%
-	&-m
-		@extend .g-1
-		@media(min-width 992px)
-			flex-basis 25%
-		
-.g-5 
-	flex-basis 20%
-	&-s
-		@extend .g-1
-		@media(min-width 767px)
-			flex-basis 20%
-	&-m
-		@extend .g-1
-		@media(min-width 992px)
-			flex-basis 20%
-		
-.g-6 
-	flex-basis 16.5%
-	&-s 
-		@extend .g-1
-		@media(min-width 767px)
-			flex-basis 16.5%
-	&-m
-		@extend .g-1
-		@media(min-width 992px)
-			flex-basis 16.5%
-
-
-
-
 
 //size atoms
 .h-100 
 	height 100%
+.w-100
+	width 100%
 .mh-100 
 	max-height:  100%
-.w-100 
+.mw-100 
 	max-width 100%
-.w-50 
-	width 50%
-.w-50-m
-	@media(min-width 992px)
-		width 50%
 .vh-100 
-	min-height 100vh
-
+	adaptability(a: '', b: 'min-height', c: 100vh)
 
 //cursor atoms
 .pointer 
@@ -310,17 +232,9 @@ for i in  5 10 20 30 35 300
 .arrow 
 	cursor default
 
-//transition atoms
-.fluency 
-	transition all .4s ease		
-.fluency--fast 
-	transition all .2s ease
-.fluency--slow
-	transition all .8s ease
-
 //overflow atoms
 .o-hidden
-	overflow hidden
+	adaptability(a: '', b: 'overflow', c: hidden)
 .o-hidden--x 
 	overflow-x hidden
 .o-hidden--y
