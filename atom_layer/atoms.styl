@@ -25,13 +25,6 @@ for i in (1..12)
 			@media(max-width 767px)
 				flex-basis percentage(i/12)
 
-//container
-.wrap 
-	width 100%
-	margin 0 auto
-	@media(min-width 992px)
-		width work-size
-
 //display-atoms
 .none 
 	adaptability(a: '', b: 'display', c: none)
@@ -241,11 +234,3 @@ for i in  5 10 15 20 25 30 100
 	overflow-y hidden
 .o-auto
 	overflow auto
-
-//page elements indent
-.title 
-	padding vw(title-top) 0 vw(title-bottom)
-.section
-	padding vw(section-top) 0 vw(section-bottom)
-.button 
-	padding vw(button-v) vw(button-h)
