@@ -1,0 +1,71 @@
+em(pixels)
+ return (pixels/browser-context)em
+
+vw(pixels)
+ return (pixels/screen-width * 100)vw
+
+vh(pixels)
+  return (pixels/screen-height * 100)vh
+
+vmax(pixels)
+ return (pixels/screen-width * 100)vmax
+
+
+fzDefine(text-type, list, units, n)
+    for name, size in list
+      .{text-type}-{name}
+        font-size: units(size - n)
+
+
+colorMaker(class-name, prop, list)
+	for color-name, color-value in list
+		.{class-name}-{color-name}
+			{prop}: (color-value)
+
+
+adaptability(a,b,c) 
+	if a != ''
+		@extend {a} 
+	{b}(c)
+	&--m
+		if a != ''
+			@extend {a} 
+		@media(max-width 992px)
+			{b}(c)
+	&--d 
+		if a != ''
+			@extend {a}
+		@media(min-width 992px)
+			{b}(c)
+
+
+
+center(w)
+	left "calc(50% - (%s / 2))" % w 
+
+
+
+size(w=auto, h=auto, mw=auto, mh=auto, display = 0px)
+	@media(min-width display) 
+		if w != auto 
+			width vw(w)
+		if h != auto
+			height: vw(h)
+		if mw != auto 
+			min-width (mw)px
+		if mh != auto 
+			min-height (mh)px
+
+	
+
+coords(t=auto, b=auto, r=auto, l=auto, display = 0px)
+	@media(min-width display)
+		if(t != auto)
+			top vw(t)
+		if(b != auto)
+			bottom vw(b)
+		if(r != auto)
+			right vw(r)
+		if(l != auto)
+			left vw(l)
+
