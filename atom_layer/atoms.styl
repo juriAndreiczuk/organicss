@@ -1,12 +1,14 @@
+//utility classes
+
 //text-atoms
 fzDefine(text-type: ttl, list: titles-size, units: em, n: 9)
-fzDefine(text-type: txt, list: text-size, units: em, n: 1)	
+fzDefine(text-type: txt, list: text-size, units: em, n: 1)
 
 @media(min-width 1200px) {
   fzDefine(text-type: ttl, list: titles-size, units: vmax, n: 0)
 }
 @media(min-width 1600px) {
-	fzDefine(text-type: txt, list: text-size, units: vmax, n: 0)	
+	fzDefine(text-type: txt, list: text-size, units: vmax, n: 0)
 }
 
 //organicss grid
@@ -15,92 +17,92 @@ fzDefine(text-type: txt, list: text-size, units: em, n: 1)
 for i in (1..12)
 	.fb-{i}
 		flex-basis percentage(i/12)
-		&--d 
+		&--d
 			@media(min-width 992px)
 				flex-basis percentage(i/12)
-		&--t 
+		&--t
 			@media(max-width 992px)
 				flex-basis percentage(i/12)
-		&--m		
+		&--m
 			@media(max-width 767px)
 				flex-basis percentage(i/12)
 
 //display-atoms
-.none 
+.none
 	adaptability(a: '', b: 'display', c: none)
-.i-block 
+.i-block
 	adaptability(a: '', b: 'display', c: inline-block)
-.block 
+.block
 	adaptability(a: '', b: 'display', c: block)
-.inline 
+.inline
 	adaptability(a: '', b: 'display', c: inline)
 //flex-atoms
-.flex 
+.flex
 	display flex
 	flex-flow row wrap
-.flex-center 
+.flex-center
 	adaptability(a: '.flex', b: 'justify-content', c: center)
-.flex-between 
+.flex-between
 	adaptability(a: '.flex', b: 'justify-content', c: space-between)
-.flex-around 
+.flex-around
 	adaptability(a: '.flex', b: 'justify-content', c: space-around)
 .flex-start
 	adaptability(a: '.flex', b: 'justify-content', c: flex-start)
-.flex-end 
+.flex-end
 	adaptability(a: '.flex', b: 'justify-content', c: flex-end)
-//----------------------------vertical-aligment 
-.ai-center 
+//----------------------------vertical-aligment
+.ai-center
 	adaptability(a: '', b: 'align-items', c: center)
-.ai-stretch 
+.ai-stretch
 	adaptability(a: '', b: 'align-items', c: stretch)
-.ai-start 
+.ai-start
 	adaptability(a: '', b: 'align-items', c: flex-start)
-.ai-end 
+.ai-end
 	adaptability(a: '', b: 'align-items', c: flex-end)
 
 //-----------------------------direction
-.fd-reverse 
+.fd-reverse
 	adaptability(a: '', b: 'flex-direction', c: row-reverse)
-.fd-column 
+.fd-column
 	adaptability(a: '', b: 'flex-direction', c: column)
-.fd-column-reverse 
+.fd-column-reverse
 	adaptability(a: '', b: 'flex-direction', c: column-reverse)
 
 
 //transition atoms
 for i in (2 4 6 8 10)
 	.transition-{i}
-		transition all (i / 10)s ease	
+		transition all (i / 10)s ease
 
 
 
-//fonts 
-.center 
+//fonts
+.center
 	adaptability(a: '', b: 'text-align', c: center)
-.text-left 
+.text-left
 	adaptability(a: '', b: 'text-align', c: left)
 .text-right
 	adaptability(a: '', b: 'text-align', c: right)
-.f-main 
+.f-main
 	font-family main-font
-.f-extra 
+.f-extra
 	font-family additional-font
 
 //-----------------------------colors
 colorMaker(class-name: c, prop: 'color', list: colors)
-.accent-color:hover 
+.accent-color:hover
 	color accent-color
 
 //--------------------------transform
-.uppercase 
+.uppercase
 	text-transform uppercase
-.capitalize 
+.capitalize
 	text-transform capitalize
-.lowercase 
+.lowercase
 	text-transform lowercase
-.italic 
+.italic
 	font-style italic
-.normal-font 
+.normal-font
 	font-style normal
 
 
@@ -111,11 +113,11 @@ colorMaker(class-name: bg, prop: 'background-color',list: colors)
 	background-color transparent
 .accent-hover:hover
 	background-color accent-color
-	
+
 .background-fixed
 	@media(min-width 992px)
 		background-attachment fixed
-.background-center	
+.background-center
 	background-position center
 .background-bottom
 	background-position bottom
@@ -130,34 +132,34 @@ colorMaker(class-name: bg, prop: 'background-color',list: colors)
 
 
 //position atoms
-.absolute 
+.absolute
 	adaptability(a: '', b: 'position', c: absolute)
-.relative 
+.relative
 	adaptability(a: '', b: 'position', c: relative)
-.fixed 
+.fixed
 	adaptability(a: '', b: 'position', c: fixed)
-.sticky 
+.sticky
 	adaptability(a: '', b: 'position', c: sticky)
-	
-.top 
+
+.top
 	adaptability(a: '', b: 'top', c: 0)
 .left
 	adaptability(a: '', b: 'left', c: 0)
 .right
 	adaptability(a: '', b: 'right', c: 0)
-.bottom 
+.bottom
 	adaptability(a: '', b: 'bottom', c: 0)
-	
+
 .behind-top
 	adaptability(a: '', b: 'bottom', c: 100%)
-.behind-left 
+.behind-left
 	adaptability(a: '', b: 'right', c: 100%)
-.behind-right 
+.behind-right
 	adaptability(a: '', b: 'left', c: 100%)
 .behind-bottom
 	adaptability(a: '', b: 'top', c: 100%)
 
-//z-index 
+//z-index
 for i in (-1..10)
 	.z-{i}
 		z-index  i
@@ -169,7 +171,7 @@ for i in (0..10)
 //font-weight
 for i in 300 400 500 700 900
 	.fw-{i}
-		font-weight i	
+		font-weight i
 //line-height
 for i in (1..6)
 	.lh-{i}
@@ -179,7 +181,7 @@ for i in (1..6)
 for i in  5 10 15 20 25 30 100
 	.border-radius-{i}
 		border-radius (i)px
-.circle 
+.circle
 	border-radius  50%
 
 
@@ -196,39 +198,39 @@ for i in  5 10 15 20 25 30 100
 	right auto !important
 .left-reset
 	left auto !important
-.width-reset 
+.width-reset
 	width auto !important
-.height-reset 
+.height-reset
 	height auto !important
 .border-reset
 	border none
-.collapse 
+.collapse
 	transform scale(0)
 	opacity 0
 
 
 //size atoms
-.h-100 
+.h-100
 	height 100%
 .w-100
 	width 100%
-.mh-100 
+.mh-100
 	max-height:  100%
-.mw-100 
+.mw-100
 	max-width 100%
-.vh-100 
+.vh-100
 	adaptability(a: '', b: 'min-height', c: 100vh)
 
 //cursor atoms
-.pointer 
+.pointer
 	cursor pointer
-.arrow 
+.arrow
 	cursor default
 
 //overflow atoms
 .o-hidden
 	adaptability(a: '', b: 'overflow', c: hidden)
-.o-hidden--x 
+.o-hidden--x
 	overflow-x hidden
 .o-hidden--y
 	overflow-y hidden

@@ -1,3 +1,5 @@
+//functions for creating classes and properties
+
 em(pixels)
  return (pixels/browser-context)em
 
@@ -23,16 +25,16 @@ colorMaker(class-name, prop, list)
 			{prop}: (color-value)
 
 
-adaptability(a,b,c) 
+adaptability(a,b,c)
 	if a != ''
-		@extend {a} 
+		@extend {a}
 	{b}(c)
 	&--m
 		if a != ''
-			@extend {a} 
+			@extend {a}
 		@media(max-width 992px)
 			{b}(c)
-	&--d 
+	&--d
 		if a != ''
 			@extend {a}
 		@media(min-width 992px)
@@ -41,22 +43,22 @@ adaptability(a,b,c)
 
 
 center(w)
-	left "calc(50% - (%s / 2))" % w 
+	left "calc(50% - (%s / 2))" % w
 
 
 
 size(w=auto, h=auto, mw=auto, mh=auto, display = 0px)
-	@media(min-width display) 
-		if w != auto 
+	@media(min-width display)
+		if w != auto
 			width vw(w)
 		if h != auto
 			height: vw(h)
-		if mw != auto 
+		if mw != auto
 			min-width (mw)px
-		if mh != auto 
+		if mh != auto
 			min-height (mh)px
 
-	
+
 
 coords(t=auto, b=auto, r=auto, l=auto, display = 0px)
 	@media(min-width display)
@@ -68,4 +70,3 @@ coords(t=auto, b=auto, r=auto, l=auto, display = 0px)
 			right vw(r)
 		if(l != auto)
 			left vw(l)
-
