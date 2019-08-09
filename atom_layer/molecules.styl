@@ -1,16 +1,63 @@
 //use atoms to create molecules (using the directive @extend)
-.title 
-	padding vw(title-top) 0 vw(title-bottom)
-.section
-	padding vw(section-top) 0 vw(section-bottom)
-.button
+.m-text
+	@extend .f-main
+	@extend .c-text
+	@extend .fw-400
+	@extend .lh-4
+	@extend .txt-m
+.m-title
+	padding-top vw(title-top)
+	padding-bottom vw(title-bottom)
+	@extend .f-extra
+	@extend .c-title
+	@extend .fw-700
+	@extend .lh-5
+	@extend .ttl-m
+.m-button
 	padding vw(button-v) vw(button-h)
-.list
-	padding 0
-.link
+	@extend .border-reset
+	@extend .bg-main
+	@extend .c-body
+	@extend .flex-center
+	@extend .ai-center
+	@extend .uppercase
+	@extend .f-main
+	@extend .txt-m
+	@extend .transition-4
+	@extend .border-radius-15
+	&:hover
+		@extend .bg-accent
+.m-link
+	@extend .f-main
+	@extend .txt-m
 	@extend .i-block
-.wrap
-	width 100%
+	@extend .c-additional
+	@extend .transition-4
+	&:hover
+		@extend .c-accent
+.m-wrap
+	@extend .w-100
 	margin 0 auto
 	@media(min-width 992px)
 		width work-size
+.m-section
+	padding vw(section-top) 0 vw(section-bottom)
+	@extend .relative
+.m-list
+	padding 0
+	@extend .relative
+	@extend .f-main
+	@extend .lh-6
+	@extend .c-text
+.m-input
+	@extend .bg-body
+	@extend .border-reset
+	@extend .w-100
+	@extend .c-text
+	@extend .f-main
+	&::placeholder
+		@extend .transition-4
+		@extend .f-main
+	&:focus
+		&::placeholder
+			@extend .visible-0

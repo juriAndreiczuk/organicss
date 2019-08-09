@@ -91,7 +91,7 @@ for i in (2 4 6 8 10)
 //-----------------------------colors
 colorMaker(class-name: c, prop: 'color', list: colors)
 .accent-color:hover
-	color accent-color
+	@extend .c-accent
 
 //--------------------------transform
 .uppercase
@@ -111,8 +111,10 @@ colorMaker(class-name: c, prop: 'color', list: colors)
 colorMaker(class-name: bg, prop: 'background-color',list: colors)
 .bg-transparent
 	background-color transparent
-.accent-hover:hover
-	background-color accent-color
+
+.accent-hover
+  &:hover
+	  @extend .bg-accent
 
 .background-fixed
 	@media(min-width 992px)
